@@ -45,7 +45,6 @@ public class Storage {
 	}
 
 	public void addClientSession(String user, Connection connection) {
-		if (connection == null) return;
 		ClientSession cS = new ClientSession(user, connection);
 		clients.put(user,cS);
 	}
