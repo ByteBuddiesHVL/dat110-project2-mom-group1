@@ -19,7 +19,12 @@ public class TemperatureDevice {
 
 		for (int i = 1; i <= COUNT; i++) {
 			client.publish(Common.TEMPTOPIC,"Temperature: " + sn.read());
-		}
+            try {
+                Thread.sleep(700);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
 		client.disconnect();
 
